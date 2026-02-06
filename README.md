@@ -39,6 +39,16 @@ mvn spring-boot:run
 mvn test
 ```
 
+## CI/CD
+
+仓库包含 GitHub Actions 流水线，可在推送到 `main` 分支时构建并通过 SCP 上传构建产物。请先在仓库 Secrets 中配置：
+
+- `DEPLOY_HOST`：服务器地址
+- `DEPLOY_PORT`：SSH 端口（例如 22）
+- `DEPLOY_USER`：登录用户名
+- `DEPLOY_SSH_KEY`：SSH 私钥内容（建议使用专用部署密钥）
+- `DEPLOY_TARGET_DIR`：服务器上的目标目录（例如 `/home/hbk/app`）
+
 ## 贡献
 
 欢迎提交 Issue 与 Pull Request。请在提交前确保描述清晰，并附上必要的测试或复现步骤。
