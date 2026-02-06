@@ -22,7 +22,32 @@ Codex 是一个用于记录与演示的示例仓库，后续将逐步补充功�
 
 ## 快速开始
 
-当前版本暂无可执行代码。后续会补充安装与运行步骤。
+### 前置条件
+
+- Java 17
+- Maven 3.9+
+
+### 本地运行
+
+```bash
+mvn spring-boot:run
+```
+
+### 运行测试
+
+```bash
+mvn test
+```
+
+## CI/CD
+
+仓库包含 GitHub Actions 流水线，可在推送到 `main` 分支时构建并通过 SCP 上传构建产物。请先在仓库 Secrets 中配置：
+
+- `DEPLOY_HOST`：服务器地址
+- `DEPLOY_PORT`：SSH 端口（例如 22）
+- `DEPLOY_USER`：登录用户名
+- `DEPLOY_SSH_KEY`：SSH 私钥内容（建议使用专用部署密钥）
+- `DEPLOY_TARGET_DIR`：服务器上的目标目录（例如 `/home/hbk/app`）
 
 ## 贡献
 
