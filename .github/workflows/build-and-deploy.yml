@@ -22,15 +22,6 @@ jobs:
       - name: Build with Maven
         run: mvn -B -DskipTests package
 
-      - name: Verify SSH connection
-        uses: appleboy/ssh-action@v1.0.3
-        with:
-          host: ${{ secrets.DEPLOY_HOST }}
-          username: ${{ secrets.DEPLOY_USER }}
-          key: ${{ secrets.DEPLOY_SSH_KEY }}
-          port: ${{ secrets.DEPLOY_PORT }}
-          script: echo "SSH connection ok"
-
       - name: Upload JAR to server via SCP
         uses: appleboy/scp-action@v0.1.7
         with:
