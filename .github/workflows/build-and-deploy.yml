@@ -21,6 +21,11 @@ jobs:
 
       - name: Build with Maven
         run: mvn -B -DskipTests package
+      
+      - name: Debug SSH Key
+        run: |
+          echo "Checking key format..."
+          echo "${{ secrets.DEPLOY_SSH_KEY }}" | head -n 3
 
       - name: Upload JAR to server via SCP
         uses: appleboy/scp-action@v0.1.7
