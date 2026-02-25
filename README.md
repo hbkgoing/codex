@@ -33,6 +33,20 @@ Codex 是一个用于记录与演示的示例仓库，后续将逐步补充功�
 mvn spring-boot:run
 ```
 
+### 访问 Hello World
+
+启动后访问：
+
+```bash
+curl http://localhost:8080/
+```
+
+预期返回：
+
+```text
+Hello, World!
+```
+
 ### 运行测试
 
 ```bash
